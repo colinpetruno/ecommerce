@@ -76,4 +76,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # TODO: Fix for production
+  config.action_mailer.default_url_options = {
+    host: '192.168.99.101', #TODO: Pull from docker ENV var?
+    port: 4567
+  }
 end

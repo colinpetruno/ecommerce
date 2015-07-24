@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'high_voltage'
