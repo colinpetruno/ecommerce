@@ -1,3 +1,12 @@
 <h1>Edit Product</h1>
 
 <%= render "form" %>
+
+<h3>Skus</h3>
+
+<% @product.skus.each do |sku| %>
+  <%= link_to sku.name, edit_admin_product_sku_path(@product, sku) %><br>
+<% end %>
+
+<br><br>
+<%= link_to "New Sku", new_admin_product_sku_path(@product) %>
