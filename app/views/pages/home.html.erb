@@ -1,5 +1,14 @@
 this is the home page
 <br>
 <br>
+<% Product.all.each do |product| %>
+  Product Name: <%= product.name %> <br>
+  Product Price: <%= product.price_range %><br>
+  <%= link_to "Buy Product", product_path(product) %>
+  <br><br>
+<% end %>
+
+<br>
+<br>
 <%= link_to "Admin Categories", admin_categories_path %><br>
 <%= link_to "Admin Products", admin_products_path %>

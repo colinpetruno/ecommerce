@@ -5,4 +5,6 @@ Rails.application.routes.draw do
       resources :skus
     end
   end
+
+  resources :products, only: [:show]
 end
