@@ -1,7 +1,9 @@
 class OrderItemsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
-    order_item = OrderItem.new(order_item_params)
+    order = current_order
+
+    order_item = order.order_items.build(order_item_params)
 
     # TODO: Better Error Handling
     order_item.save

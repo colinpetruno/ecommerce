@@ -6,7 +6,7 @@ BUY ME!
 <%= simple_form_for [@product, OrderItem.new] do |f| %>
   <%= f.association :sku,
     as: :select,
-    collection: @product.skus,
+    collection: @product.skus - current_order.skus,
     include_blank: false %>
   <%= f.submit %>
 <% end %>
