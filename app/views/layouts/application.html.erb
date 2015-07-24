@@ -14,5 +14,15 @@
 
   <%= yield %>
 
+  <% if current_order.present? %>
+    <br><br>
+    <div>
+      <h1>Cart</h1>
+      <% current_order.order_items.each do |order_item| %>
+        Item: <%= "#{order_item.product.name} - #{order_item.sku.name}" %><br>
+      <% end %>
+    </div>
+  <% end %>
+
 </body>
 </html>
