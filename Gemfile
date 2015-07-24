@@ -8,6 +8,7 @@ gem 'pg'
 gem 'rails', '4.2.3'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
+gem 'stripe'
 gem 'therubyracer', platforms: :ruby
 gem 'uglifier', '>= 1.3.0'
 
