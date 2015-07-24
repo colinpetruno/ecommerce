@@ -2,3 +2,11 @@
 Description: <%= @product.description %>
 <br><br>
 BUY ME!
+
+<%= simple_form_for [@product, OrderItem.new] do |f| %>
+  <%= f.association :sku,
+    as: :select,
+    collection: @product.skus,
+    include_blank: false %>
+  <%= f.submit %>
+<% end %>
