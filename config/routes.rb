@@ -12,9 +12,8 @@ Rails.application.routes.draw do
   end
 
   namespace :checkout do
-    resources :shipping_addresses,
+    resources :shipping_forms,
       only: [:new, :create],
-      as: :shipping,
       path: :shipping
   end
 
