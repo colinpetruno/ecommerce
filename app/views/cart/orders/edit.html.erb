@@ -1,3 +1,14 @@
 <br>
 <h1>Review Cart Stuff</h1>
 this is the order that can be edited
+
+<h3>Order Items</h3>
+<% @order.order_items.each do |order_item| %>
+  <%= order_item.full_name %><br>
+  Quantity: <%= order_item.quantity %><br>
+  Price: <%= order_item.total_price %>
+  <br><br>
+<% end %>
+
+<h3>Order Details</h3>
+Total: <%= @order.total %>
