@@ -8,6 +8,7 @@ class ShippingForm
     :email,
     :first_name,
     :last_name,
+    :order,
     :password,
     :state,
     :user,
@@ -22,22 +23,44 @@ class ShippingForm
   validates :state, presence: true
   validates :zip, presence: true
 
-  def process
+  def process_order(current_order)
+    self.order = current_order
+
     if valid?
-      create_user
-      # create shipping address and tie it to the current order
+      ActiveRecord::Base.transaction do
+        create_user
+        self.order.create_shipping_address(shipping_address_hash)
+        order.update_column(:email, email)
+      end
+      # TODO: Update status on orer to some different state
+    else
+      false
     end
   end
 
   private
 
+  def shipping_address_hash
+    {
+      address_1: address_1,
+      address_2: address_2,
+      city: city,
+      first_name: first_name,
+      last_name: last_name,
+      state: state,
+      zip: zip
+    }
+  end
+
   def create_user
     return if password.blank?
 
-    self.user = User.new(
+    self.user = User.create(
       email: email,
       password: password,
       password_confirmation: password
     )
+
+    order.update_column(:user_id, self.user.id)
   end
 end
