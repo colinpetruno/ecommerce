@@ -6,7 +6,7 @@ class Checkout::ShippingFormsController < ApplicationController
   def create
     @shipping_form = ShippingForm.new(shipping_form_params)
     if @shipping_form.process_order(current_order)
-      #
+      redirect_to new_checkout_credit_card_path#
     else
       render :new
     end

@@ -1,0 +1,44 @@
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        Populate CC Info
+        <select id="dev-credit-card-select" class="form-control">
+          <option></option>
+          <option value="1">Visa - Success</option>
+          <option value="2">Mastercard - Success</option>
+          <option value="3">AMEX - Success</option>
+          <option value="4">Card Declined</option>
+        </select>
+
+        <%= content_for :footer do %>
+          <script type="text/javascript">
+            var cards = [
+              {card: '4242424242424242', cvv: '123', first: 'Jane', last: 'Doe'},
+              {card: '5555555555554444', cvv: '123', first: 'Jane', last: 'Doe'},
+              {card: '378282246310005', cvv: '1234', first: 'Jane', last: 'Doe'},
+
+              {card: '4000000000000002', cvv: '123', first: 'Jane', last: 'Doe'}, // not in use
+
+              {card: '4444444444444448', cvv: '123', first: 'Jane', last: 'Doe'},
+              {card: '4222222222222220', cvv: '123', first: 'Jane', last: 'Doe'},
+              {card: '5112000200000002', cvv: '200', first: 'Jane', last: 'Doe'},
+              {card: '4457000300000007', cvv: '901', first: 'Jane', last: 'Doe'},
+              {card: '6500000000000002', cvv: '123', first: 'John', last: 'Doe'}
+            ];
+            $('#dev-credit-card-select').change(function(){
+              var card = cards[$(this).val() - 1];
+              $('#card-number').val(card.card);
+              $('#card-name').val(card.first + card.last);
+              $('#card-cvv').val(card.cvv);
+              $("#cc-ex-month").val(12);
+              $("#cc-ex-year").val(2020);
+              $("#postal-code").val("02115");
+            });
+          </script>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

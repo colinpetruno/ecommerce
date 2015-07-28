@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726142927) do
+ActiveRecord::Schema.define(version: 20150728014604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(version: 20150726142927) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "funding_instruments", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "user_id"
+    t.string   "type"
+    t.string   "name"
+    t.string   "account_type"
+    t.string   "description"
+    t.string   "number"
+    t.string   "expiration_month"
+    t.string   "expiration_year"
+    t.string   "stripe_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -33,12 +48,13 @@ ActiveRecord::Schema.define(version: 20150726142927) do
   add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
-    t.string   "session_id", null: false
+    t.string   "session_id",            null: false
     t.integer  "user_id"
     t.integer  "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "email"
+    t.integer  "funding_instrument_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -69,6 +85,15 @@ ActiveRecord::Schema.define(version: 20150726142927) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
+
+  create_table "stripe_customers", force: :cascade do |t|
+    t.string   "email",      null: false
+    t.string   "stripe_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stripe_customers", ["email"], name: "index_stripe_customers_on_email", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

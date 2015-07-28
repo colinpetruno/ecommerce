@@ -16,6 +16,12 @@ Rails.application.routes.draw do
     resources :shipping_forms,
       only: [:new, :create],
       path: :shipping
+    resources :credit_cards,
+      only: [:new, :create],
+      path: :billing
+    resources :order_confirmations,
+      only: [:new, :create],
+      path: :review
   end
 
   resources :products, only: [:show] do
