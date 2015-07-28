@@ -9,4 +9,9 @@ class Order < ActiveRecord::Base
   def total
     order_items.map(&:total_price).inject(0, :+)
   end
+
+  def abandon
+    self.status = :abandoned
+    save
+  end
 end

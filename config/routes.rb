@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :cart do
     get "/" => "orders#edit"
+    resource :abandoned_cart, only: :create
   end
 
   namespace :checkout do

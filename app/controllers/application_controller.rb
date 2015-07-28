@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_order
   def current_order
-    Order.find_or_create_by(session_id: session.id, status: "active")
+    @order ||= Order.
+      find_or_create_by(
+        session_id: session.id,
+        status: "active"
+      )
   end
 end
