@@ -1,10 +1,13 @@
 source 'http://rubygems.org'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'bitters'
+gem 'bourbon'
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'high_voltage'
+gem 'neat'
 gem 'pg'
 gem 'rails', '4.2.3'
 gem 'sass-rails', '~> 5.0'
