@@ -28,10 +28,11 @@ class ShippingForm
 
     if valid?
       ActiveRecord::Base.transaction do
-        create_user
-        self.order.create_shipping_address(shipping_address_hash)
+        find_or_create_user
+        order.create_shipping_address(shipping_address_hash)
         order.update_column(:email, email)
       end
+
       # TODO: Update status on orer to some different state
     else
       false
@@ -52,14 +53,20 @@ class ShippingForm
     }
   end
 
-  def create_user
+  def find_or_create_user
     return if password.blank?
 
-    self.user = User.create(
-      email: email,
-      password: password,
-      password_confirmation: password
-    )
+    possible_user = User.where(email: email)
+
+    if user.present? && user.valid_password?(password)
+      self.user = possible_user
+    else
+      self.user = User.create(
+        email: email,
+        password: password,
+        password_confirmation: password
+      )
+    end
 
     order.update_column(:user_id, self.user.id)
   end

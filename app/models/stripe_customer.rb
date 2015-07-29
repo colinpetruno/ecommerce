@@ -20,7 +20,7 @@ class StripeCustomer < ActiveRecord::Base
     customer = Stripe::Customer.create(
       email: self.email
     )
-    update_column(:stripe_id, customer.id)
+    self.stripe_id = customer.id
     customer
   end
 end

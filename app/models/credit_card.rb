@@ -7,7 +7,7 @@ class CreditCard < FundingInstrument
   def redeem_token
     if user.present?
       customer = user.stripe_customer
-      card = customer.sources.create({source: token})
+      card = customer.stripe_object.sources.create({source: token})
 
       self.stripe_id = card.id
       self.description = card.brand
