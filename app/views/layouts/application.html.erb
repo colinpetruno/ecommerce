@@ -46,6 +46,7 @@
     <%= button_to "Abandon", cart_abandoned_cart_path %>
   <% end %>
 
+  <%= render partial: "shared/footer" %>
   <%= yield :footer %>
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 </body>
