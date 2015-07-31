@@ -10,8 +10,8 @@
   $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
 
   @include position(fixed, 0px 0px 0px auto);
-  @include size(320px 100%);
-  @include transform(translateX(320px));
+  @include size(295px 100%);
+  @include transform(translateX(295px));
   @include transition(all 0.25s linear);
 
   background: $sliding-panel-background;
