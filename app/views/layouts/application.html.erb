@@ -15,37 +15,12 @@
   <p class="alert"><%= alert %></p>
 
   <div>
-    Nav: <%= link_to "Home", root_path %>
-  </div>
-
-  <div>
     <h3>Current User</h3>
     <%= current_user.try :email %>
     <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
   </div>
 
-  <div>
-    <h3>Current Cart</h3>
-    Cart Id: <%= current_order.id %><br>
-    # of Order Items: <%= current_order.order_items.length %>
-  </div>
-
   <%= yield %>
-
-  <% if current_order.present? %>
-    <br><br>
-    <div>
-      <h1>Cart</h1>
-      <% current_order.order_items.each do |order_item| %>
-        Item: <%= "#{order_item.product.name} - #{order_item.sku.name}" %><br>
-      <% end %>
-    </div>
-    <br><br>
-    <%= link_to "CHECKOUT!!!", cart_path %>
-
-    <br><br>
-    <%= button_to "Abandon", cart_abandoned_cart_path %>
-  <% end %>
 
   <%= render partial: "shared/footer" %>
   <%= yield :footer %>

@@ -15,6 +15,7 @@
   @include transition(all 0.25s linear);
 
   background: $sliding-panel-background;
+  color: $sliding-panel-color;
   z-index: 999999;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;

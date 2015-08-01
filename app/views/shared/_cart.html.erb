@@ -9,6 +9,29 @@
       Your Cart
     </div>
   </header>
+
+  <section>
+    <div>
+      <h3>Current Cart</h3>
+      Cart Id: <%= current_order.id %><br>
+      # of Order Items: <%= current_order.order_items.length %>
+    </div>
+
+    <% if current_order.present? %>
+      <br><br>
+      <div>
+        <h1>Cart</h1>
+        <% current_order.order_items.each do |order_item| %>
+          Item: <%= "#{order_item.product.name} - #{order_item.sku.name}" %><br>
+        <% end %>
+      </div>
+      <br><br>
+      <%= link_to "CHECKOUT!!!", cart_path %>
+
+      <br><br>
+      <%= button_to "Abandon", cart_abandoned_cart_path %>
+    <% end %>
+  </section>
 </nav>
 
 <div class="js-cart-screen sliding-panel-fade-screen"></div>
