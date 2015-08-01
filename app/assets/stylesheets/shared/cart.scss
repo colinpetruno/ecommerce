@@ -19,30 +19,19 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    list-style: none;
-  }
-
-  li a {
-    border-bottom: $sliding-panel-border;
+  header {
+    @include clearfix;
     color: $sliding-panel-color;
-    display: block;
-    font-weight: bold;
-    padding: 1em;
-    text-decoration: none;
 
-    &:focus {
-      background-color: $sliding-panel-background-focus;
+    .cart-back-button-container {
+      float: left;
+      width: 25%;
     }
 
-    &:hover {
-      background-color: $sliding-panel-background-hover;
-      color: $sliding-panel-color-hover;
+    .cart-title {
+      float: left;
+      text-align: center;
+      width: 50%;
     }
   }
 
