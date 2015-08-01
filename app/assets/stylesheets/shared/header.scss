@@ -71,14 +71,17 @@ header.navigation {
 // Nav menu
 
   nav {
-    float: left;
+    float: none;
     min-height: $navigation-height;
     z-index: 9999999;
+
+    @include media ($horizontal-bar-mode) {
+      float: left;
+    }
   }
 
   ul.navigation-menu {
-    -webkit-transform-style: preserve-3d;
-// stop webkit flicker
+    -webkit-transform-style: preserve-3d; // stop webkit flicker
     clear: both;
     display: none;
     margin: 0 auto;
@@ -106,8 +109,8 @@ header.navigation {
     display: block;
     line-height: $navigation-height;
     overflow: hidden;
-    padding-right: 0.8em;
-    text-align: right;
+    padding-left: 0.8em;
+    text-align: left;
     width: 100%;
     z-index: 9999;
 
