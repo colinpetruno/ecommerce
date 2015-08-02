@@ -10,8 +10,16 @@
 
 
     <div class="navigation-right">
-      <ul>
-        <li>
+      <ul class="navigation-menu">
+        <% if user_signed_in? %>
+          <li class="nav-link">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path %>
+        <% end %>
+
+        <li class="nav-link">
           <%= link_to "javascript:void(0)",
             class: "js-cart-trigger sliding-panel-button" do %>
             <%= fa_icon "shopping-cart" %>
@@ -22,7 +30,7 @@
 
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
-        <%= Category.all.each do |category| %>
+        <% Category.all.each do |category| %>
           <li class="nav-link"><a href="javascript:void(0)"><%= category.name %></a></li>
         <% end %>
       </ul>

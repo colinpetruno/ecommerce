@@ -1,12 +1,7 @@
-this is the home page
-<br>
-<br>
-<% Product.all.each do |product| %>
-  Product Name: <%= product.name %> <br>
-  Product Price: <%= product.price_range %><br>
-  <%= link_to "Buy Product", product_path(product) %>
-  <br><br>
-<% end %>
+<%= render partial: "pages/banner_image" %>
+
+
+<%= render partial: "categories/category", collection: Category.all %>
 
 <br>
 <br>
