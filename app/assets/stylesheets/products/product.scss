@@ -1,0 +1,8 @@
+.product {
+  @include outer-container;
+  min-height: 400px;
+
+  &>div {
+    @include span-columns(6);
+  }
+}

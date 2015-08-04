@@ -1,12 +1,12 @@
-<h1><%= @product.name %></h1>
-Description: <%= @product.description %>
-<br><br>
-BUY ME!
+<div class="product">
+  <div>
+    &nbsp;
+  </div>
+  <div>
+    <h1><%= @product.name %></h1>
+    Description: <%= @product.description %>
+    <%= render partial: "order_item_form", locals: { product: @product } %>
+    <br><br>
+  </div>
+</div>
 
-<%= simple_form_for [@product, OrderItem.new] do |f| %>
-  <%= f.association :sku,
-    as: :select,
-    collection: @product.skus - current_order.skus,
-    include_blank: false %>
-  <%= f.submit %>
-<% end %>
