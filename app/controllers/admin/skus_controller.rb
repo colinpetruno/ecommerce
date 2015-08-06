@@ -1,4 +1,4 @@
-class Admin::SkusController < ApplicationController
+class Admin::SkusController < Admin::BaseController
 
   def new
     @product = Product.find(params[:product_id])
