@@ -8,5 +8,17 @@
   <%= link_to sku.name, edit_admin_product_sku_path(@product, sku) %><br>
 <% end %>
 
-<br><br>
 <%= link_to "New Sku", new_admin_product_sku_path(@product) %>
+<h3>Images</h3>
+<div>
+  <% @product.images.each do |image| %>
+    <%= cl_image_tag(image.resource.url, width: 300) %>
+    <br>
+    <%= button_to "Delete",
+      admin_product_image_path(@product, image),
+      method: :delete
+    %>
+    <br><br>
+  <% end %>
+</div>
+<%= link_to "New Image", new_admin_product_image_path(@product) %>

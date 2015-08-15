@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+
   namespace :admin do
     resources :categories
     resources :products do
+      resources :images, only: [:new, :create, :destroy]
       resources :skus
     end
   end

@@ -1,0 +1,5 @@
+<%= simple_form_for [:admin, @product, @image] do |f| %>
+  <%= f.hidden_field(:resource_cache) %>
+  <%= f.file_field(:resource) %>
+  <%= f.submit %>
+<% end %>
