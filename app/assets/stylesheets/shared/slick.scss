@@ -1,0 +1,8 @@
+.carousel {
+  margin-bottom: 60px;
+  padding: 0 30px;
+
+  .slick-prev:before, .slick-next:before {
+    color: #ff0000;
+  }
+}

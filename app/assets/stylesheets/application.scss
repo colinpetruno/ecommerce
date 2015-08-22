@@ -1,8 +1,12 @@
+// Frameworks
 @import "bourbon";
 @import "base/base";
 @import "neat";
 
+// Plugins
 @import "font-awesome";
+@import 'slick';
+@import 'slick-theme';
 
 @import "layouts/base";
 @import "shared/base";
