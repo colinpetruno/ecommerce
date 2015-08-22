@@ -8,8 +8,13 @@ class Order < ActiveRecord::Base
   has_many :skus, through: :order_items
   has_one :shipping_address
 
-  def total
+  def sub_total
     order_items.map(&:total_price).inject(0, :+)
+  end
+
+  def total
+    # will need to add tax
+    sub_total
   end
 
   def total_in_cents

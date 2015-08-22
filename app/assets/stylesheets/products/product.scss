@@ -2,7 +2,10 @@
   @include outer-container;
   min-height: 400px;
 
-  &>div {
-    @include span-columns(6);
+  & > div {
+    @include span-columns(8);
+    &:last-child {
+      @include span-columns(4);
+    }
   }
 }

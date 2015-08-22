@@ -7,7 +7,15 @@ class OrderItem < ActiveRecord::Base
     "#{product.name} - #{sku.name}"
   end
 
+  def short_description
+    "some placeholder, add column later"
+  end
+
   def total_price
     sku.price * quantity
+  end
+
+  def formatted_price
+    "$#{sprintf('%.2f', total_price)}"
   end
 end
