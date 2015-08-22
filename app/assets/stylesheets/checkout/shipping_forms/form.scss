@@ -1,0 +1,35 @@
+.shipping-form {
+  @include outer-container;
+
+  & > div {
+    @include span-columns(6);
+  }
+
+  .name {
+    @include outer-container;
+    & > div {
+      @include span-columns(6);
+    }
+  }
+
+  .shipping-info {
+    @include outer-container;
+
+    & > div {
+      @include span-columns(3);
+    }
+
+    & > div:first-child {
+      @include span-columns(5);
+    }
+
+    & > div:last-child {
+      @include span-columns(4);
+    }
+  }
+
+  input[type=submit] {
+    background: $green;
+    color: $white;
+  }
+}

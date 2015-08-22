@@ -1,0 +1,13 @@
+.checkout-breadcrumbs {
+  @include outer-container;
+
+  background-color: $gray;
+  color: $white;
+  margin-bottom: 50px;
+  padding-bottom: $small-spacing;
+  padding-top: $small-spacing;
+
+  & > div {
+    @include span-columns(4);
+  }
+}

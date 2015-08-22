@@ -1,0 +1,24 @@
+<div class="shipping-form">
+  <div>
+    <%= simple_form_for [:checkout, shipping_form] do |f| %>
+      <section class="name">
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+      </section>
+
+      <%= f.input :email %>
+      <%= f.input :address_1 %>
+      <%= f.input :address_2 %>
+
+      <section class="shipping-info">
+        <%= f.input :city %>
+        <%= f.input :state, as: :select, collection: States.short_names %>
+        <%= f.input :zip %>
+      </section>
+
+      <%= f.input :password %>
+
+      <%= f.submit t(".submit"), class: "btn" %>
+    <% end %>
+  </div>
+</div>

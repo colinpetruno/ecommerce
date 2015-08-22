@@ -8,7 +8,11 @@
 @import 'slick';
 @import 'slick-theme';
 
+// Site Shared Styles
 @import "layouts/base";
 @import "shared/base";
+
+// Page Specific Styles
+@import "checkout/base";
 @import "pages/base";
 @import "products/base";
