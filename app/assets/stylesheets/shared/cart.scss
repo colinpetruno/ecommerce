@@ -4,19 +4,29 @@
   @include transform(translateX(295px));
   @include transition(all 0.25s linear);
 
-  background: $sliding-panel-background;
-  color: $sliding-panel-color;
+  background: $off-white;
+  color: $dark-gray;
   z-index: 999999;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
   header {
     @include clearfix;
+    background: $sliding-panel-background;
     color: $sliding-panel-color;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+    vertical-align: center;
 
     .cart-back-button-container {
       float: left;
       width: 25%;
+      button.sliding-panel-close {
+        background: transparent;
+        color: $white;
+        padding-top: 8px;
+      }
     }
 
     .cart-title {
@@ -42,5 +52,48 @@
   &.is-visible {
     opacity: 0.4;
     visibility: visible;
+  }
+}
+
+.cart-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 200px;
+}
+
+.cart-items {
+  background: $white;
+  min-height: 200px;
+  padding: 1em;
+}
+
+.cart-totals {
+  padding: $base-spacing, $small-spacing;
+  & > div {
+    @include outer-container;
+    & > div {
+      @include span-columns(6);
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.cart-checkout {
+  background-color: $white;
+  bottom: 0;
+  border-top: 1px solid $light-gray;
+  left: 0;
+  padding: $base-spacing;
+  position: absolute;
+  right: 0;
+
+  .btn {
+    background: $green;
+    display: block;
+    text-align: center;
   }
 }

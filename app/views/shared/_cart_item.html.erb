@@ -1,0 +1,20 @@
+<div class="cart-item">
+  <div class="cart-item-image">
+    <%= cl_image_tag(cart_item.product.images.first.resource.url,
+                     width: "100%") %>
+  </div>
+  <div class="cart-item-details">
+    <header><%= cart_item.full_name %></header>
+
+    <section><%= cart_item.short_description %></section>
+
+    <footer>
+      <div>
+        <button>-</button> QTY <%= cart_item.quantity %> <button>+</button>
+      </div>
+      <div>
+        <%= cart_item.formatted_price %>
+      </div>
+    </footer>
+  </div>
+</div>

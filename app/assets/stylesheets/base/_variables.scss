@@ -17,11 +17,16 @@ $base-z-index: 0;
 
 // Colors
 $blue: #477dca;
+$green: #28c891;
+
+// Values
+$black: #000000;
 $dark-gray: #333333;
+$gray: #666666;
 $medium-gray: #999999;
 $light-gray: #dddddd;
+$off-white: #f4f4f4;
 $white: #ffffff;
-$black: #000000;
 
 // Font Colors
 $base-background-color: $white;
@@ -76,3 +81,6 @@ $navigation-active-link-color: transparentize(white, 0.5);
 $navigation-submenu-padding: 1em;
 $navigation-submenu-width: 12em;
 $horizontal-bar-mode: $large-screen;
+
+// Buttons
+$all-button-inputs: 'a.btn, input[type=submit]';
