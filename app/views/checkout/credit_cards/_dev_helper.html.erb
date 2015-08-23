@@ -29,12 +29,12 @@
             ];
             $('#dev-credit-card-select').change(function(){
               var card = cards[$(this).val() - 1];
-              $('#card-number').val(card.card);
-              $('#card-name').val(card.first + card.last);
-              $('#card-cvv').val(card.cvv);
-              $("#cc-ex-month").val(12);
-              $("#cc-ex-year").val(2020);
-              $("#postal-code").val("02115");
+              $('#payment_placeholder_card_number').val(card.card);
+              $('#payment_placeholder_card_name').val(card.first + card.last);
+              $('#payment_placeholder_cvc').val(card.cvv);
+              $("#payment_placeholder_exp_month").val(12);
+              $("#payment_placeholder_exp_year").val(2020);
+              // $("#postal-code").val("02115");
             });
           </script>
         <% end %>

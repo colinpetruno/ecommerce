@@ -1,4 +1,20 @@
-<h3>Review and Confirm Your Order</h3>
+<%= render partial: "checkout/breadcrumbs", locals: { step: 3 } %>
+
+<h3>Cart Items</h3>
+
+<div>
+  <% @order_confirmation.order_items.each do |order_item| %>
+    <%= render partial: "shared/cart_item", locals: { cart_item: order_item } %>
+  <% end %>
+</div>
+
+<br><br>
+<h3>Shipping Info</h3>
+<%= @order_confirmation.address_1 %><br>
+<%= @order_confirmation.address_2 %>
+<%= @order_confirmation.address_line_3 %>
+<br>
+
 <%= simple_form_for [:checkout, @order_confirmation] do |f| %>
-  <%= f.submit %>
+  <%= f.submit t(".submit") %>
 <% end %>

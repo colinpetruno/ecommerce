@@ -1,0 +1,27 @@
+<div class="credit-card-form">
+  <div>
+
+    <%=
+      simple_form_for PaymentPlaceholder.new,
+        url: "#",
+        html: {
+          id: "credit-card-form"
+        } do |f|
+    %>
+      <%= f.input :card_name %>
+      <%= f.input :card_number, input_html: { data: { stripe: "number" } } %>
+      <div class="expiration">
+        <%= f.input :exp_month, input_html: { data: { stripe: "exp-month" } } %>
+        <%= f.input :exp_year, input_html: { data: { stripe: "exp-year" } } %>
+      </div>
+      <%= f.input :cvc, input_html: { data: { stripe: "cvc" } } %>
+    <% end %>
+
+    <%= simple_form_for [:checkout, credit_card] do |f| %>
+      <%= f.input :token, as: :hidden %>
+      <%= f.submit t(".submit") %>
+    <% end %>
+
+    <%= render partial: "dev_helper" if Rails.env.development? %>
+  </div>
+</div>

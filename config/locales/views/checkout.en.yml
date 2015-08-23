@@ -3,3 +3,9 @@ en:
     shipping_forms:
       form:
         submit: "Continue"
+    credit_cards:
+      form:
+        submit: "Continue"
+    order_confirmations:
+      new:
+        submit: "Complete Order"
