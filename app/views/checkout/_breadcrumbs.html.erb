@@ -1,13 +1,13 @@
 <div class="checkout-breadcrumbs">
-  <div>
-    This is the shipping forms header breadcrumbs
+  <div class="<%= "selected" if step == 1 %>">
+    Step 1. Shipping
   </div>
 
-  <div>
-    Other stuff
+  <div class="<%= "selected" if step == 2 %>">
+    Step 2. Payment
   </div>
 
-  <div>
-    third column
+  <div class="<%= "selected" if step == 3 %>">
+    Step 3. Review & Confirm
   </div>
 </div>
