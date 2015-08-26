@@ -7,6 +7,7 @@ class OrderConfirmation
 
   delegate :address_1, :address_2, :city, :state, :zip, to: :shipping_address
   delegate :order_items, to: :order
+  delegate :brand, to: :card_details, prefix: true
 
   def self.from(order)
     new(order)
@@ -36,9 +37,17 @@ class OrderConfirmation
     "#{city} #{state} #{zip}"
   end
 
+  def card_details_last4
+    card_details.last4.rjust(16, "X")
+  end
+
   private
 
   def shipping_address
     order.shipping_address
+  end
+
+  def card_details
+    order.funding_instrument.details
   end
 end

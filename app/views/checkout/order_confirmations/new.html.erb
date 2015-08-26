@@ -15,6 +15,12 @@
 <%= @order_confirmation.address_line_3 %>
 <br>
 
+
+<br><br>
+<h3>Contact Info</h3>
+-- email
+-- phone number
+
 <%= simple_form_for [:checkout, @order_confirmation] do |f| %>
   <%= f.submit t(".submit") %>
 <% end %>

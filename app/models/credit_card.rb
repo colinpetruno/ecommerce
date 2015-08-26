@@ -2,6 +2,10 @@ class CreditCard < FundingInstrument
   before_create :redeem_token
   belongs_to :user
 
+  def details
+    @credit_card ||= fetch_credit_card
+  end
+
   private
 
   def redeem_token
@@ -18,12 +22,12 @@ class CreditCard < FundingInstrument
     end
   end
 
-  def details
-    @credit_card ||= fetch_credit_card
-  end
-
   def fetch_credit_card
-    customer = user.stripe_customer
-    customer.sources.retrieve(stripe_id)
+    if user.present?
+      customer = user.stripe_customer
+      customer.sources.retrieve(stripe_id)
+    else
+      Stripe::Token.retrieve(token).card
+    end
   end
 end

@@ -1,5 +1,27 @@
+<h1>Thanks For Your Order</h1>
+
+This is some text that congratulates them on their purchase. It allows them to
+get their confirmation and tell them they will be getting an email at some point
+with the confirmation.
+
+<br><br>
+
 <h1>Receipt</h1>
 
 Please print for your records<br>
 
-This will render the users receipts
+<h3>Shipping Info</h3>
+<%= @order_confirmation.address_1 %><br>
+<%= @order_confirmation.address_2 %>
+<%= @order_confirmation.address_line_3 %>
+
+<h3>Billing Info</h3>
+Card Type:<br>
+<%= @order_confirmation.card_details_brand %>
+Card Number:<br>
+<%= @order_confirmation.card_details_last4 %>
+<br><br>
+
+<% @order_confirmation.order_items.each do |order_item| %>
+  This is an order item.<br>
+<% end %>
