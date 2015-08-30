@@ -1,5 +1,10 @@
-<%= simple_form_for [:admin, @product, @sku] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
+<div class="panel">
+  <div><%= @sku.name %></div>
+  <div>
+    <%= simple_form_for [:admin, @product, @sku] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

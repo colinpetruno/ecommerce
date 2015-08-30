@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ecommerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'admin', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+  <%= render partial: "admin/shared/header" %>
+
+  <div class="admin">
+    <div>
+      <div>
+        <%= render partial: "shared/admin/navigation" %>
+      </div>
+      <div>
+        <div class="admin-content">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= yield :footer %>
+</body>
+</html>

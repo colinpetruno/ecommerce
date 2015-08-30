@@ -1,0 +1,23 @@
+<div class="admin-header">
+  <div>
+    <div class="admin-logo">
+      <%= link_to root_path, class: "logo" do %>
+        <%= image_tag "shared/logo.png" %>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <% if user_signed_in? %>
+          <li class="nav-link">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-link">
+            <%= link_to "Log In", new_user_session_path %>
+          </li>
+        <% end %>
+      </li>
+  </div>
+</div>

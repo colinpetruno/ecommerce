@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  enum role: [ :user, :site_admin, :admin, :super_admin ]
+
   has_many :funding_instruments
 
   def stripe_customer

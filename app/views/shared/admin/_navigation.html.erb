@@ -1,0 +1,32 @@
+<div class="admin-navigation">
+  <div>
+  <ul class="admin-navigation-list">
+    <li>
+      <a href="javascript:void(0)" class="js-accordion-trigger">
+        <%= fa_icon "cubes" %> Products
+      </a>
+      <ul class="submenu">
+        <li>
+          <%= link_to "Categories", admin_categories_path %>
+        </li>
+        <li>
+          <%= link_to "Skus", admin_products_path %>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="javascript:void(0)" class="js-accordion-trigger">
+        <%= fa_icon "shopping-cart" %> Orders
+      </a>
+      <ul class="submenu">
+        <li>
+          <a href="javascript:void(0)">Sub Item 1</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">Sub Item 2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</div>

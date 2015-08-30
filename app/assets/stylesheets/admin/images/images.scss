@@ -1,0 +1,26 @@
+.admin-product-images {
+  @include outer-container;
+  margin: ($gutter * 2) 0;
+
+  & li {
+    display: block;
+    background: $white;
+    padding: 15px;
+    @include span-columns(3);
+    @include omega(4n);
+
+    & > div {
+      min-height: 220px;
+    }
+  }
+
+  img {
+    border: 4px solid $gray;
+  }
+
+  input[type=submit] {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}

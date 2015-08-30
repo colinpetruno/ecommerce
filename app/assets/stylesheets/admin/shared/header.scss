@@ -1,0 +1,38 @@
+.admin-header {
+  background: #00cdb1;
+  color: $white;
+  min-height: 50px;
+
+  .admin-logo {
+    padding: 10px 0;
+    margin-left: 30px;
+
+    img {
+      max-height: 30px;
+      max-width: 100%;
+    }
+  }
+
+  & > div {
+    @include span-columns(6);
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  ul {
+    display: inline;
+    margin: 0 30px;
+    li {
+      display: inline;
+      a {
+        color: $white;
+        display: inline-block;
+        font-size: 1em;
+        font-weight: bold;
+        line-height: 45px;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,9 +1,6 @@
-<%= render partial: "pages/banner_image" %>
+<%= render layout: "layouts/content_container" do %>
+  <%= render partial: "pages/banner_image" %>
+<% end %>
 
+<%= render partial: "pages/feature" %>
 
-<%= render partial: "categories/category", collection: Category.all %>
-
-<br>
-<br>
-<%= link_to "Admin Categories", admin_categories_path %><br>
-<%= link_to "Admin Products", admin_products_path %>

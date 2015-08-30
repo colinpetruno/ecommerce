@@ -1,0 +1,12 @@
+.product-form {
+  @include outer-container();
+  margin-bottom: $gutter * 2;
+
+  & > div {
+    @include span-columns(8);
+
+    &:last-child {
+      @include span-columns(4);
+    }
+  }
+}

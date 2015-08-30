@@ -1,0 +1,12 @@
+<h1>Skus</h1>
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Price</th>
+  </thead>
+
+  <%= render product.skus %>
+</table>
+
+<%= link_to "New Sku", new_admin_product_sku_path(product), class: "button" %>

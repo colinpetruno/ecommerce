@@ -1,0 +1,34 @@
+.panel {
+  background: $white;
+  // border: 1px solid darken($medium-gray, 15%);
+  & > div {
+    padding: 15px;
+
+    &:first-child {
+      background: $blue;
+      color: $white;
+      font-size: $base-font-size * 1.2;
+      font-weight: bold;
+    }
+  }
+
+  input[type=submit] {
+    background: $blue;
+  }
+}
+
+.panel.important{
+  & > div {
+    &:first-child {
+      background: $salmon;
+    }
+  }
+
+  dt {
+    color: $salmon;
+  }
+
+  input[type=submit] {
+    background: $salmon;
+  }
+}

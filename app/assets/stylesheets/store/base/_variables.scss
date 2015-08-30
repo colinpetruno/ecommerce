@@ -1,0 +1,89 @@
+// Typography
+$base-font-family: 'proxima-nova'; // $helvetica;
+$heading-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #477dca;
+
+$light-green: #97eb71;
+$green: #89D864;// #28c891;
+$dark-green: #85B667;
+
+// Values
+$black: #000000;
+$dark-gray: #333333;
+$gray: #666666;
+$medium-gray: #999999;
+$light-gray: #dddddd;
+$off-white: #f4f4f4;
+$white: #ffffff;
+
+// Font Colors
+$base-background-color: $white;
+$base-font-color: $dark-gray;
+$action-color: $blue;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba($black, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Screen Sizes
+$medium-screen: em(640) !default;
+$large-screen: em(860) !default;
+
+// Cart
+$action-color: $blue !default;
+$dark-gray: $dark-gray !default;
+$sliding-panel-border-color: $dark-gray;
+$sliding-panel-background: lighten($sliding-panel-border-color, 5%);
+$sliding-panel-color: $white;
+$sliding-panel-border: 1px solid $sliding-panel-border-color;
+$sliding-panel-background-hover: $action-color;
+$sliding-panel-color-hover: $white;
+$sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
+
+// Footer
+$base-spacing: 1.5em !default;
+$action-color: $blue !default;
+$footer-background: desaturate(darken($action-color, 20%), 30%);
+$footer-color: $white;
+$footer-link-color: transparentize($footer-color, 0.6);
+$footer-disclaimer-color: transparentize($footer-color, 0.6);
+
+// Header
+$base-border-color: gainsboro !default;
+$base-border-radius: 3px !default;
+$action-color: $blue !default;
+$dark-gray: $dark-gray !default;
+$navigation-padding: 1em;
+$navigation-background: $white;
+$navigation-color: $black; // transparentize($dark-gray, 0.3);
+$navigation-color-hover: $black;
+$navigation-height: 60px;
+$navigation-nav-button-background: $action-color;
+$navigation-nav-button-background-hover: lighten($navigation-background, 10%);
+$navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
+$navigation-active-link-color: transparentize(white, 0.5);
+$navigation-submenu-padding: 1em;
+$navigation-submenu-width: 12em;
+$horizontal-bar-mode: $large-screen;
+
+// Buttons
+$all-button-inputs: 'a.btn, input[type=submit]';

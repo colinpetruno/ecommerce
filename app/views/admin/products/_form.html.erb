@@ -1,6 +1,33 @@
-<%= simple_form_for [:admin, @product] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.association :category %>
-  <%= f.submit %>
-<% end %>
+<section class="product-form">
+  <div class="panel">
+    <div>
+      <%= @product.name %>
+    </div>
+    <div>
+      <%= simple_form_for [:admin, @product] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.association :category %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <div class="panel important">
+      <div>Tips</div>
+      <div>
+        <dl>
+          <dt>Product</dt>
+          <dd>A product is a common grouping of multiple skus. It prevents
+          your store from being cluttered with the same items.</dd>
+
+          <dt>Sku</dt>
+          <dd>Sku's are for subtle differences in products. For example,
+            a product may come in different colors which have different
+            line items in inventory. These colors can be different price points
+            and will get rolled up on the products page.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

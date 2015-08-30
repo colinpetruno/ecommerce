@@ -1,0 +1,23 @@
+<div class="admin-product-images">
+  <h1>Images</h1>
+
+  <ul>
+  <% @product.images.each do |image| %>
+    <li>
+      <div>
+        <%= cl_image_tag(image.resource.url, width: 300) %>
+
+      </div>
+        <%= button_to "Delete",
+          admin_product_image_path(@product, image),
+          method: :delete
+        %>
+    <% end %>
+    </li>
+  </ul>
+</div>
+
+<%= link_to "New Image",
+  new_admin_product_image_path(@product),
+  class: "button"
+%>

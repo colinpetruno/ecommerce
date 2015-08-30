@@ -1,0 +1,13 @@
+.admin-products {
+  tr {
+    th, td {
+      &:first-child {
+        width: 15%;
+      }
+
+      &:last-child {
+        width: 15%;
+      }
+    }
+  }
+}
