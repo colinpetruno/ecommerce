@@ -2,6 +2,10 @@
   <div>
   <ul class="admin-navigation-list">
     <li>
+      <%= link_to admin_path do %>
+        <%= fa_icon "tachometer" %> Dashboard
+      <% end %>
+    <li>
       <a href="javascript:void(0)" class="js-accordion-trigger">
         <%= fa_icon "cubes" %> Products
       </a>

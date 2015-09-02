@@ -6,13 +6,14 @@
 #
 default: &default
   adapter: postgresql
+  host: <%= ENV["DB_PORT_5432_TCP_ADDR"] %>
   pool: 5
+  username: postgres
 
 development:
   <<: *default
   database: ecommerce_development
-  username: postgres
-  host: <%= ENV["DB_PORT_5432_TCP_ADDR"] %>
+  
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

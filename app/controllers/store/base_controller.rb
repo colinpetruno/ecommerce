@@ -1,5 +1,6 @@
 class Store::BaseController < ApplicationController
   layout "store"
+  before_action :track_page_view
 
   helper_method :current_order
   def current_order
@@ -17,5 +18,18 @@ class Store::BaseController < ApplicationController
           status: "active"
         )
     end
+  end
+
+  private
+
+  def track_page_view
+
+    PageView.new(
+      request: request,
+      session: session,
+      current_user: current_user,
+      user_agent_parser: UserAgentParser,
+      uri: URI
+    ).track
   end
 end
