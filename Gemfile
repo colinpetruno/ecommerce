@@ -25,7 +25,9 @@ source 'http://rubygems.org' do
   gem 'user_agent_parser'
 
   group :development, :test do
+    gem 'capybara-webkit'
     gem 'factory_girl_rails'
+    gem 'poltergeist'
     gem 'pry-byebug'
     gem 'pry-rails'
     gem 'rspec-rails'

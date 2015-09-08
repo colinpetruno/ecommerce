@@ -1,0 +1,13 @@
+<div class="admin-page-view">
+  <div class="details">
+    <div>
+      <%= render partial: "browser", locals: { page_view: @page_view } %>
+    </div>
+
+    <div>
+      <%= render partial: "request", locals: { page_view: @page_view } %>
+    </div>
+  </div>
+
+  <%= render partial: "utm", locals: { page_view: @page_view } %>
+</div>

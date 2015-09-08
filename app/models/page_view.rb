@@ -1,4 +1,6 @@
 class PageView < ActiveRecord::Base
+  belongs_to :user
+
   attr_accessor :request, :session, :current_user, :user_agent_parser, :uri
 
   def track

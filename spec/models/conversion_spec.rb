@@ -12,7 +12,7 @@ RSpec.describe Conversion, type: :model do
       create(:order, session_id: 2, status: 0)
 
       conversion_rate = Conversion.percentage()
-      expect(conversion_rate).to eq(50)
+      expect(conversion_rate).to eql(50)
     end
   end
 end

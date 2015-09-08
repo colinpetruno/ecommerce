@@ -1,0 +1,8 @@
+<tr>
+  <td>
+    <%= link_to page_view.page_url, admin_page_view_path(page_view) %>
+  </td>
+  <td><%= page_view.browser %></td>
+  <td><%= page_view.referrer %></td>
+  <td><%= page_view.user.try(:email) %></td>
+</tr>

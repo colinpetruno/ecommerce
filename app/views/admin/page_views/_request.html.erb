@@ -1,0 +1,24 @@
+<div class="panel">
+  <div>Request</div>
+  <div>
+    <dl>
+      <dt>Page Url</dt>
+      <dd><%= page_view.page_url %></dd>
+      <dt>IP Address</dt>
+      <dd><%= page_view.ip_address %></dd>
+      <dt>IP Location</dt>
+      <dd><%= page_view.location %></dd>
+      <dt>Referrer</dt>
+      <dd><%= page_view.referrer %></dd>
+      <dt>User</dt>
+      <dd>
+        <% if page_view.user.present? %>
+          <%= page_view.user.email %>
+        <% else %>
+          N/A
+        <% end %>
+
+      </dd>
+    </dl>
+  </div>
+</div>

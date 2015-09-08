@@ -1,4 +1,6 @@
 class Order < ActiveRecord::Base
+  include Filterable
+
   enum status: [ :active, :abandoned, :completed ]
 
   belongs_to :user
@@ -19,6 +21,10 @@ class Order < ActiveRecord::Base
 
   def total_in_cents
     (total * 100).to_i
+  end
+
+  def total_items
+    order_items.sum(:quantity)
   end
 
   def process

@@ -1,0 +1,5 @@
+var container = $("#cart-item-<%= @order_item.id %>");
+var html = "<%= j render partial: "shared/cart_item",
+                         locals: { cart_item: @order_item }%>";
+
+container.replaceWith(html);

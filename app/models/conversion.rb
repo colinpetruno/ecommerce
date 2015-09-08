@@ -8,7 +8,7 @@ class Conversion
   end
 
   def percentage
-    conversion_rate * 100.to_f
+    (conversion_rate * 100.to_f).to_i
   end
 
   private

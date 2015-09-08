@@ -24,10 +24,23 @@
       </a>
       <ul class="submenu">
         <li>
-          <a href="javascript:void(0)">Sub Item 1</a>
+          <%= link_to "Completed", admin_orders_path(status: :completed) %>
         </li>
         <li>
-          <a href="javascript:void(0)">Sub Item 2</a>
+          <%= link_to "In Progress", admin_orders_path(status: :active) %>
+        </li>
+        <li>
+          <%= link_to "Abandoned", admin_orders_path(status: :abandoned) %>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="javascript:void(0)" class="js-accordion-trigger">
+        <%= fa_icon "line-chart" %> Analytics
+      </a>
+      <ul class="submenu">
+        <li>
+          <%= link_to "Page Views", admin_page_views_path %>
         </li>
       </ul>
     </li>

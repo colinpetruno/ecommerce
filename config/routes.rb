@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get "/" => "dashboards#show"
 
     resources :categories
+    resources :orders, only: [:index, :show]
+    resources :page_views, only: [:index, :show]
     resources :products do
       resources :images, only: [:new, :create, :destroy]
       resources :skus
@@ -36,7 +38,7 @@ Rails.application.routes.draw do
     end
 
     resources :products, only: [:show] do
-      resources :order_items, only: [:create]
+      resources :order_items, only: [:create, :update]
     end
   end
 end

@@ -1,0 +1,4 @@
+<%= simple_form_for [cart_item.product, cart_item], remote: true do |f| %>
+  <%= f.hidden_field :quantity, value: cart_item.quantity + offset %>
+  <%= f.button :submit, offset < 0 ? "-" : "+" %>
+<% end %>

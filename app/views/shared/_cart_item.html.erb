@@ -1,4 +1,4 @@
-<div class="cart-item">
+<div class="cart-item" id="cart-item-<%= cart_item.id %>">
   <div class="cart-item-image">
     <%= cl_image_tag(cart_item.product.images.first.resource.url,
                      width: "100%") %>
@@ -10,7 +10,18 @@
 
     <footer>
       <div>
-        <button>-</button> QTY <%= cart_item.quantity %> <button>+</button>
+        <div class="order-item-quantities">
+          <%= render partial: "store/order_items/form",
+            locals: { cart_item: cart_item, offset: -1 } %>
+
+          QTY <%= cart_item.quantity %>
+
+          <%= render partial: "store/order_items/form",
+            locals: { cart_item: cart_item, offset: 1 } %>
+        </div>
+        <div class="spinner">
+          <i class="fa fa-circle-o-notch fa-spin"></i>
+        </div>
       </div>
       <div>
         <%= cart_item.formatted_price %>

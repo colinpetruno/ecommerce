@@ -11,9 +11,15 @@ class Store::OrderItemsController < Store::BaseController
     redirect_to product_path(@product)
   end
 
+  def update
+    @order_item = OrderItem.find(params[:id])
+
+    @order_item.update(order_item_params)
+  end
+
   private
 
   def order_item_params
-    params.require(:order_item).permit(:sku_id)
+    params.require(:order_item).permit(:sku_id, :quantity)
   end
 end

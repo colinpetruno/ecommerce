@@ -24,7 +24,7 @@
     footer {
       @include outer-container;
 
-      div {
+      & > div {
         @include span-columns(8);
         &:last-child {
           @include span-columns(4);
@@ -32,9 +32,18 @@
         }
       }
 
-      button {
-        background: transparent;
-        color: $dark-gray;
+      form {
+        display: inline;
+
+        input[type=submit] {
+          background: transparent;
+          color: $dark-gray;
+        }
+      }
+
+      .spinner {
+        display: none;
+        text-align: center;
       }
     }
   }

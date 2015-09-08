@@ -1,5 +1,21 @@
-<% @categories.each do |category| %>
-  <%= link_to category.name, edit_admin_category_path(category) %><br />
-<% end %>
+<h1>Categories</h1>
 
-<%= link_to t(".links.new"), new_admin_category_path %>
+<table>
+  <thead>
+    <th>Name</th>
+    <th># Products</th>
+  </thead>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td>
+        <%= link_to category.name, edit_admin_category_path(category) %><br />
+      </td>
+      <td>
+        <%= category.products.size %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t(".links.new"), new_admin_category_path, class: "button" %>

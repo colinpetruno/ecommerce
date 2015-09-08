@@ -18,4 +18,12 @@ class OrderItem < ActiveRecord::Base
   def formatted_price
     "$#{sprintf('%.2f', total_price)}"
   end
+
+  def quantity=(count)
+    if count.to_i < 1
+      write_attribute(:quantity, 1)
+    else
+      super
+    end
+  end
 end

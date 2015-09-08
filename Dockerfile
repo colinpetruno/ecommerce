@@ -28,6 +28,8 @@ RUN \
   mv $PHANTOM_JS /usr/local/share && \
   ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
 
+RUN apt-get install -y qt4-default
+
 ENV APP_HOME /app/ecommerce
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
