@@ -35,3 +35,7 @@ source 'http://rubygems.org' do
     gem 'web-console', '~> 2.0'
   end
 end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-js-cookie'
+end

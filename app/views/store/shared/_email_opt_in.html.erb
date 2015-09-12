@@ -1,0 +1,19 @@
+<div class="email-opt-in">
+  <div>
+    <h3>New to StoreName?</h3>
+    <p>Enter your email to unlock a special offer for new customers.</p>
+
+    <%= simple_form_for EmailSubscriber.new, remote: true do |f| %>
+      <div class="email">
+        <%= f.input_field :email %>
+        <%= button_tag(type: :submit) do %>
+          <%= fa_icon("angle-double-right") %>
+        <% end %>
+      </div>
+    <% end %>
+
+    For new customers only. Offer valid for the next 48 hours.<br>
+    Cannot be combined with any other offers or promotions.
+    <br><br>
+  </div>
+</div>

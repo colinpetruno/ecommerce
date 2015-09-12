@@ -1,0 +1,63 @@
+.email-opt-in {
+  position: absolute;
+  background: rgba(0,0,0,.4);
+  bottom: 0;
+  display: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+
+
+  & > div {
+    background: $white;
+    border: 1px solid $off-white;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 150px;
+    padding: $gutter;
+    text-align: center;
+    width: 90%;
+    z-index: 1000;
+  }
+
+  @include media($horizontal-bar-mode) {
+    & > div {
+      width: 50%;
+    }
+  }
+
+  h3 {
+    font-size: $base-font-size * 2.25;
+  }
+
+  .email {
+    position: relative;
+
+    input[type=text] {
+      @include appearance(none);
+      @include box-sizing(border-box);
+      @include transition(border-color);
+      background-color: white;
+      border-radius: $base-border-radius;
+      border-radius: $base-border-radius;
+      border: 1px solid $base-border-color;
+      display: block;
+      font-size: 1em;
+      font-style: italic;
+      margin: 0;
+      padding: ($base-spacing / 3) ($base-spacing / 3);
+      position: relative;
+      width: 100%;
+    }
+
+    button, input[type=submit] {
+      @include button(flat, $action-color);
+      @include position(absolute, 0em 0em 0em null);
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      outline: none;
+      padding: 5px 10px;
+    }
+  }
+}

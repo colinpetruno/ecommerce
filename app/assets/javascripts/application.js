@@ -1,6 +1,8 @@
+//= require namespace
 //= require jquery
 //= require jquery_ujs
 //= require jquery.slick
+//= require js-cookie
 //= require_tree .
 
 $(function(){

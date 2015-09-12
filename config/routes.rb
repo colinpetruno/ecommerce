@@ -37,6 +37,8 @@ Rails.application.routes.draw do
         path: :review
     end
 
+    resources :email_subscribers, only: [:create]
+
     resources :products, only: [:show] do
       resources :order_items, only: [:create, :update]
     end

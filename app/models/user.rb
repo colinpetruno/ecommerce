@@ -12,4 +12,7 @@ class User < ActiveRecord::Base
     @stripe_customer ||= StripeCustomer.find_or_create_by(self.email)
   end
 
+  def full_user?
+    encrypted_password.present?
+  end
 end
