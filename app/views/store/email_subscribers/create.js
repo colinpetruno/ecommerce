@@ -1,1 +1,0 @@
-window.ecommerce.emailOptIn.hidePopup();

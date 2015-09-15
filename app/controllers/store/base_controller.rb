@@ -23,7 +23,6 @@ class Store::BaseController < ApplicationController
   private
 
   def track_page_view
-
     PageView.new(
       request: request,
       session: session,

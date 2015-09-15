@@ -3,11 +3,11 @@ class EmailSubscriber
 
   attr_reader :user, :email
 
-  def self.create(email: email)
+  def self.create(email:)
     new(email: email).process
   end
 
-  def initialize(email: email, user_model: User)
+  def initialize( user_model: User, email: "")
     @email = email
     @user_model = user_model
   end

@@ -57,8 +57,12 @@ class PageView < ActiveRecord::Base
 
   def set_browser_details
     self.browser = user_agent_details.family
-    self.browser_version = user_agent_details.version.to_s
-    self.browser_major_version = user_agent_details.version.major.to_s
+
+    if user_agent_details.version.present?
+      self.browser_version = user_agent_details.version.to_s
+      self.browser_major_version = user_agent_details.version.major.to_s
+    end
+
     self.user_agent = request.user_agent
     self.operating_system = user_agent_details.os.to_s
   end
