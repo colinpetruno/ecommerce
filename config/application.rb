@@ -8,7 +8,6 @@ Bundler.require(*Rails.groups)
 
 module Ecommerce
   class Application < Rails::Application
-    config.web_console.whitelisted_ips = '192.168.99.0/16'
 
     # add all locale directories
     config.i18n.load_path += Dir[
