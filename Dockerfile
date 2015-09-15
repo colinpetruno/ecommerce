@@ -34,8 +34,17 @@ ENV APP_HOME /app/ecommerce
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
-ADD Gemfile* $APP_HOME/
-RUN bundle install
+# ADD Gemfile* $APP_HOME/
+
+# Copy the Gemfile and Gemfile.lock into the image. 
+# Temporarily set the working directory to where they are. 
+WORKDIR /tmp 
+ADD Gemfile Gemfile
+ADD Gemfile.lock Gemfile.lock
+RUN bundle install 
+WORKDIR $APP_HOME
+
+# RUN bundle install
 RUN test -f $APP_HOME/tmp/pids/server.pid && rf $APP_HOME/tmp/pids/server.pid; true
 
 ADD . $APP_HOME
