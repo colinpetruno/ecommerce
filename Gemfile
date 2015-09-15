@@ -14,6 +14,7 @@ source 'http://rubygems.org' do
   gem 'high_voltage'
   gem 'neat'
   gem 'pg'
+  gem 'puma'
   gem 'rails', '4.2.3'
   gem 'resque'
   gem 'resque-web', require: 'resque_web'
