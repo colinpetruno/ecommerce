@@ -1,8 +1,11 @@
+ruby "2.2.0"
+
 source 'http://rubygems.org' do
   gem 'bcrypt', '~> 3.1.7'
   gem 'bitters'
   gem 'bourbon'
   gem 'browser'
+  gem 'bugsnag'
   gem 'carrierwave'
   gem 'cloudinary'
   gem 'devise'
@@ -24,6 +27,10 @@ source 'http://rubygems.org' do
   gem 'therubyracer', platforms: :ruby
   gem 'uglifier', '>= 1.3.0'
   gem 'user_agent_parser'
+
+  group :production do
+    gem 'rails_12factor'
+  end
 
   group :development, :test do
     gem 'capybara-webkit'
