@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
+  var selectors = ".sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close";
+  $('body').on('click touchstart', selectors, function(){
     $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
     e.preventDefault();
   });

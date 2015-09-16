@@ -21,6 +21,16 @@ class Store::OrderItemsController < Store::BaseController
     @order_item.update(order_item_params)
   end
 
+  def destroy
+    # TODO: MAKE THIS NOT DELETE BUT HIDE
+    @order_item = OrderItem.find(params[:id])
+    @order_item.destroy
+
+    respond_with @product do |format|
+      format.html { redirect_to product_path(@product) }
+    end
+  end
+
   private
 
   def order_item_params

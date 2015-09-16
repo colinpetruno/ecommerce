@@ -1,4 +1,4 @@
-<nav class="js-cart sliding-panel-content">
+<nav class="js-cart sliding-panel-content <%= "is-visible" if defined?(visible) %> ">
   <header>
     <div class="cart-back-button-container">
       <button class="sliding-panel-close">
@@ -44,4 +44,3 @@
   <% end %>
 </nav>
 
-<div class="js-cart-screen sliding-panel-fade-screen"></div>
