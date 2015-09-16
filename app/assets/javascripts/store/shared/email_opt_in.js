@@ -28,6 +28,12 @@
     $('body').on('click', ecommerce.emailOptIn.target, function(){
       ecommerce.emailOptIn.hidePopup();
     });
+
+    $(document).keyup(function(e) {
+      if (e.keyCode == 27) {
+        ecommerce.emailOptIn.hidePopup();
+      }
+    });
   }
 })();
 

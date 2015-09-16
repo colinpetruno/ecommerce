@@ -1,7 +1,9 @@
 <div class="cart-item" id="cart-item-<%= cart_item.id %>">
   <div class="cart-item-image">
-    <%= cl_image_tag(cart_item.product.images.first.resource.url,
-                     width: "100%") %>
+    <% if cart_item.product.images.present? %>
+      <%= cl_image_tag(cart_item.product.images.first.resource.url,
+                       width: "100%") %>
+    <% end %>
   </div>
   <div class="cart-item-details">
     <header><%= cart_item.full_name %></header>

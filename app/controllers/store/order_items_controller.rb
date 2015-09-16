@@ -1,4 +1,6 @@
 class Store::OrderItemsController < Store::BaseController
+  respond_to :html, :js
+
   def create
     @product = Product.find(params[:product_id])
     order = current_order
@@ -8,7 +10,9 @@ class Store::OrderItemsController < Store::BaseController
     # TODO: Better Error Handling
     order_item.save
 
-    redirect_to product_path(@product)
+    respond_with @product do |format|
+      format.html { redirect_to product_path(@product) }
+    end
   end
 
   def update

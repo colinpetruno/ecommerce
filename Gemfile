@@ -34,6 +34,7 @@ source 'http://rubygems.org' do
 
   group :development, :test do
     gem 'capybara-webkit'
+    gem 'database_cleaner'
     gem 'factory_girl_rails'
     gem 'poltergeist'
     gem 'pry-byebug'
