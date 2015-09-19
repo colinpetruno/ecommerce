@@ -5,10 +5,7 @@ class Store::OrderItemsController < Store::BaseController
     @product = Product.find(params[:product_id])
     order = current_order
 
-    order_item = order.order_items.build(order_item_params)
-
-    # TODO: Better Error Handling
-    order_item.save
+    OrderItem.find_or_create_by!( { order_id: order.id }.merge(order_item_params))
 
     respond_with @product do |format|
       format.html { redirect_to product_path(@product) }

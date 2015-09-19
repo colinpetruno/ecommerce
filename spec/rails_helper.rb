@@ -30,7 +30,7 @@ ActiveRecord::Migration.maintain_test_schema!
 Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
-
+  config.include Devise::TestHelpers, type: :controller
   config.include Warden::Test::Helpers
   config.before :suite do
     Warden.test_mode!
