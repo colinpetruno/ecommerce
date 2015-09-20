@@ -15,10 +15,15 @@
       color: $dark-gray;
       font-weight: bold;
       line-height: 16px;
-    }
+      position: relative;
 
-    section {
-
+      button {
+        background: transparent;
+        color: $dark-gray;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+      }
     }
 
     footer {

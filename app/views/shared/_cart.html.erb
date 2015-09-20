@@ -10,7 +10,9 @@
     </div>
   </header>
 
-  <h1>Cart</h1>
+  <div class="subtitle">
+    Free Shipping on Orders over $100.
+  </div>
 
   <% if current_order.present? %>
     <section class="cart-items">
@@ -24,15 +26,18 @@
       <section class="cart-totals">
         <div>
           <div>Subtotal</div>
-          <div><%= current_order.sub_total %></div>
+          <div><%= FormattedNumber.price(current_order.sub_total) %></div>
         </div>
         <div>
           <div>Shipping</div>
           <div>$00.00</div>
         </div>
+        <div class="promo-code">
+          <input type="text" />
+        </div>
         <div>
           <div>Total</div>
-          <div><%= current_order.total %></div>
+          <div><%= FormattedNumber.price(current_order.total) %></div>
         </div>
       </section>
 

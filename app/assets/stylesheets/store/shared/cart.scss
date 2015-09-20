@@ -1,4 +1,4 @@
-.sliding-panel-content {
+.js-cart {
   @include position(fixed, 0px 0px 0px auto);
   @include size(295px 100%);
   @include transform(translateX(295px));
@@ -6,8 +6,8 @@
 
   background: $off-white;
   color: $dark-gray;
-  z-index: 999999;
   overflow-y: auto;
+  z-index: 999999;
   -webkit-overflow-scrolling: touch;
 
   header {
@@ -36,6 +36,12 @@
     }
   }
 
+  .subtitle {
+    color: $blue;
+    padding: 10px 0;
+    text-align: center;
+  }
+
   &.is-visible {
     @include transform(translateX(0));
   }
@@ -55,14 +61,6 @@
   }
 }
 
-.cart-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  min-height: 200px;
-}
-
 .cart-items {
   background: $white;
   min-height: 200px;
@@ -70,11 +68,13 @@
 }
 
 .cart-totals {
-  padding: $base-spacing, $small-spacing;
   & > div {
     @include outer-container;
+
+    padding: 5px 15px;
     & > div {
       @include span-columns(6);
+
       &:last-child {
         text-align: right;
       }
@@ -84,12 +84,8 @@
 
 .cart-checkout {
   background-color: $white;
-  bottom: 0;
   border-top: 1px solid $light-gray;
-  left: 0;
   padding: $base-spacing;
-  position: absolute;
-  right: 0;
 
   .btn {
     background: $green;
