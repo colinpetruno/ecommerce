@@ -42,8 +42,7 @@
       </section>
 
       <section class="cart-checkout">
-        <%= link_to "CHECKOUT!!!", cart_path, class: "btn btn-info" %>
-        <%# button_to "Abandon", cart_abandoned_cart_path %>
+        <%= link_to "CHECKOUT!!!", new_checkout_shipping_form_path, class: "btn btn-info" %>
       </section>
     </div>
   <% end %>

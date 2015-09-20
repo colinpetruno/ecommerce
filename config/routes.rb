@@ -21,7 +21,6 @@ Rails.application.routes.draw do
     root to: 'pages#show', id: 'home'
 
     namespace :cart do
-      get "/" => "orders#edit"
       resource :abandoned_cart, only: :create
     end
 
