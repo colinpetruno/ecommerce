@@ -3,12 +3,12 @@ class OrderItem < ActiveRecord::Base
   belongs_to :order
   has_one :product, through: :sku
 
-  def full_name
-    "#{product.name} - #{sku.name}"
+  def product_name
+    product.name
   end
 
-  def short_description
-    "some placeholder, add column later"
+  def sku_name
+    sku.name
   end
 
   def total_price
