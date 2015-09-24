@@ -16,9 +16,13 @@
 
   <% if current_order.present? %>
     <section class="cart-items">
-      <% current_order.order_items.each do |order_item| %>
-        <%= render partial: "shared/cart_item",
-          locals: { cart_item: order_item } %>
+      <% if current_order.order_items.present? %>
+        <% current_order.order_items.each do |order_item| %>
+          <%= render partial: "shared/cart_item",
+            locals: { cart_item: order_item } %>
+        <% end %>
+      <% else %>
+        YOUR CART IS EMPTY
       <% end %>
     </section>
 
@@ -42,7 +46,7 @@
       </section>
 
       <section class="cart-checkout">
-        <%= link_to "CHECKOUT!!!", new_checkout_shipping_form_path, class: "btn btn-info" %>
+        <%= link_to "CHECKOUT", new_checkout_shipping_form_path, class: "btn btn-info" %>
       </section>
     </div>
   <% end %>
