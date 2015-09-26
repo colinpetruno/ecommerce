@@ -1,0 +1,9 @@
+.categories {
+  @include outer-container;
+
+  margin-bottom: $gutter * 2;
+
+  & > div {
+    @include span-columns(6);
+  }
+}

@@ -1,0 +1,6 @@
+<%= render layout: "layouts/content_container" do %>
+  <div class="categories">
+    <%= render partial: "store/categories/category_tile",
+      collection: Category.all, as: :category %>
+  </div>
+<% end %>

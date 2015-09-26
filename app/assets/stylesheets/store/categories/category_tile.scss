@@ -1,0 +1,15 @@
+.category-tile {
+  text-transform: uppercase;
+
+  a {
+    color: $black;
+    display: block;
+    font-weight: bold;
+  }
+
+  img {
+    @include image-rendering(optimizeSpeed);
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
