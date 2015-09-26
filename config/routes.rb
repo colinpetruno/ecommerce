@@ -24,6 +24,8 @@ Rails.application.routes.draw do
       resource :abandoned_cart, only: :create
     end
 
+    resources :categories, only: [:index, :show]
+
     namespace :checkout do
       resources :shipping_forms,
         only: [:new, :create],

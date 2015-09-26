@@ -1,0 +1,7 @@
+<h3><%= category.name %></h3>
+
+<div class="products">
+  <% category.products.each do |product| %>
+    <%= render partial: "store/products/product", object: product %>
+  <% end %>
+</div>

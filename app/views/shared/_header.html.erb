@@ -11,6 +11,9 @@
 
     <div class="navigation-right">
       <ul class="navigation-menu">
+        <li class="nav-link">
+          <%= link_to "Shop", categories_path %>
+        </li>
         <% if current_user && current_user.full_user?%>
           <li class="nav-link">
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

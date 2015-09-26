@@ -1,4 +1,9 @@
-Product Name: <%= product.name %> <br>
-Product Price: <%= product.price_range %><br>
-<%= link_to "Buy Product", product_path(product) %>
-<br><br>
+<div class="product-tile">
+  <div>
+    <%= link_to product_path(product) do %>
+      <img src="http://placehold.it/450x300" />
+    <% end %>
+  </div>
+  Product Name: <%= product.name %> <br>
+  Product Price: <%= product.price_range %><br>
+</div>

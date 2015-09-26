@@ -1,0 +1,8 @@
+<%= render layout: "layouts/content_container" do %>
+  <h3>Categories index</h3>
+
+  <%= render partial: "store/categories/category",
+    collection: @categories,
+    as: :category %>
+<% end %>
+
