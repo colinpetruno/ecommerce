@@ -1,3 +1,14 @@
 .product-tile {
+  .product-info {
+    @include outer-container;
 
+    & > div {
+      @include span-columns(9);
+      &:last-child {
+        @include span-columns(3);
+
+        text-align: right;
+      }
+    }
+  }
 }

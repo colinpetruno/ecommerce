@@ -7,6 +7,9 @@ body {
 .content-container {
   @include outer-container;
 
+  margin-bottom: 3em;
+  margin-top: 3em;
+
   &>div {
     @include span-columns(12);
   }

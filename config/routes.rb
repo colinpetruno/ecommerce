@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
     resources :email_subscribers, only: [:create]
 
-    resources :products, only: [:show] do
+    resources :products, only: [:show, :index] do
       resources :order_items, only: [:create, :update, :destroy]
     end
   end

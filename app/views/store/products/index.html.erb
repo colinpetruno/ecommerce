@@ -1,0 +1,9 @@
+<%= render layout: "layouts/content_container" do %>
+  <%= render partial: "store/shared/hero", locals: { title: "Store" } %>
+
+  <div class="products">
+    <% @products.each do |product| %>
+      <%= render partial: "store/products/product", object: product %>
+    <% end %>
+  </div>
+<% end %>

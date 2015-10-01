@@ -1,4 +1,4 @@
-<h3><%= category.name %></h3>
+<%= render partial: "store/shared/hero", locals: { title: category.name } %>
 
 <div class="products">
   <% category.products.each do |product| %>
