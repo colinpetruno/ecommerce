@@ -11,20 +11,7 @@
 
 
     <div class="navigation-right">
-      <ul class="navigation-menu">
-        <li class="nav-link">
-          <%= link_to "Shop", categories_path %>
-        </li>
-        <% if current_user && current_user.full_user?%>
-          <li class="nav-link">
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-          </li>
-        <% else %>
-          <li class="nav-link">
-            <%= link_to "Log In", new_user_session_path %>
-          </li>
-        <% end %>
-
+      <ul class="navigation-menu show">
         <li class="nav-link">
           <%= link_to "javascript:void(0)",
             class: "js-cart-trigger sliding-panel-button" do %>
@@ -41,6 +28,21 @@
             <%= link_to "Admin Panel", admin_path %>
           </li>
         <% end %>
+
+        <li class="nav-link">
+          <%= link_to "Shop", categories_path %>
+        </li>
+
+        <% if current_user && current_user.full_user?%>
+          <li class="nav-link">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-link">
+            <%= link_to "Log In", new_user_session_path %>
+          </li>
+        <% end %>
+
       </ul>
     </nav>
 
