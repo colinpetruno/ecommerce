@@ -2,6 +2,10 @@
   @include outer-container;
 
   & > div {
-    @include span-columns(4);
+    @include span-columns(6);
+
+    @include media ($horizontal-bar-mode) {
+      @include span-columns(4);
+    }
   }
 }

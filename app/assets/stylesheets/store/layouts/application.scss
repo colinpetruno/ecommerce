@@ -12,5 +12,10 @@ body {
 
   &>div {
     @include span-columns(12);
+    padding: 0 10px;
+
+    @include media ($horizontal-bar-mode) {
+      padding: 0;
+    }
   }
 }
