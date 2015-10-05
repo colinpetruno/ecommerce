@@ -1,11 +1,16 @@
 .product {
   @include outer-container;
   min-height: 400px;
+  padding: 0 10px;
 
   & > div {
-    @include span-columns(8);
-    &:last-child {
-      @include span-columns(4);
+    padding: 0;
+
+    @include media ($horizontal-bar-mode) {
+      @include span-columns(8);
+      &:last-child {
+        @include span-columns(4);
+      }
     }
   }
 }
