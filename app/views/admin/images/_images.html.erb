@@ -2,14 +2,14 @@
   <h1>Images</h1>
 
   <ul>
-  <% @product.images.each do |image| %>
+  <% images.each do |image| %>
     <li>
       <div>
         <%= cl_image_tag(image.resource.url, width: 300) %>
 
       </div>
         <%= button_to "Delete",
-          admin_product_image_path(@product, image),
+          admin_product_image_path(object, image),
           method: :delete
         %>
     <% end %>
@@ -18,6 +18,6 @@
 </div>
 
 <%= link_to "New Image",
-  new_admin_product_image_path(@product),
+  new_polymorphic_path([:admin, object, :image]),
   class: "button"
 %>

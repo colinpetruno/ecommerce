@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/" => "dashboards#show"
 
-    resources :categories
+    resources :categories do
+      resources :images, only: [:new, :create, :destroy]
+    end
+
     resources :orders, only: [:index, :show]
     resources :page_views, only: [:index, :show]
     resources :products do

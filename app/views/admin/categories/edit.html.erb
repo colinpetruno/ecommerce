@@ -2,6 +2,14 @@
 
 <%= render "form" %>
 
+<br><br>
+
+<%= render partial: "admin/images/images",
+  locals: {
+    object: @category,
+    images: [@category.image].reject(&:blank?)
+  } %>
+
 <%= button_to "Delete",
   admin_category_path(@category),
   method: :delete

@@ -4,4 +4,5 @@
 
 <%= render partial: "admin/skus/skus", locals: { product: @product } %>
 
-<%= render partial: "admin/images/images", locals: { product: @product } %>
+<%= render partial: "admin/images/images",
+           locals: { object: @product, images: @product.images } %>
