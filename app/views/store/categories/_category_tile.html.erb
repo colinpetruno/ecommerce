@@ -1,6 +1,10 @@
 <div class="category-tile">
   <div>
-    <img src="http://placehold.it/350x200" />
+    <% if category.image.present? %>
+      <%= cl_image_tag(category.image.resource.url, width: 350) %>
+    <% else %>
+      <img src="http://placehold.it/350x200" />
+    <% end %>
   </div>
   <%= link_to "Shop", category_path(category) %>
   <%= category.name %>
