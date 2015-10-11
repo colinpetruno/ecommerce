@@ -1,8 +1,37 @@
 .carousel {
   margin-bottom: 60px;
-  padding: 0 30px;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 0;
 
   .slick-prev:before, .slick-next:before {
-    color: #ff0000;
+    color: $gray;
+    font-family: FontAwesome;
+    font-size: 36px;
+  }
+
+  .slick-prev, .slick-next {
+    z-index: 100;
+  }
+
+  .slick-prev {
+    left: 25px;
+
+    &:before {
+      content: "\f104";
+    }
+  }
+
+  .slick-next {
+    right: 25px;
+
+    &:before {
+      content: "\f105";
+    }
+  }
+
+  div, img, a, button{
+    @include user-select(none);
+    outline: 0;
   }
 }
