@@ -7,6 +7,8 @@
 
 $(function(){
   // TODO: Move to config
-  Stripe.setPublishableKey('pk_test_AMAki3ck6bYEcahM8uuzytKe');
-  $('.carousel > div').slick({ dots: true });
+  if(Stripe) {
+    Stripe.setPublishableKey('pk_test_AMAki3ck6bYEcahM8uuzytKe');
+    $('.carousel > div').slick({ dots: true });
+  }
 });

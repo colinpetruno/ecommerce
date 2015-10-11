@@ -26,9 +26,9 @@ class Admin::ImagesController < Admin::BaseController
 
   def build_image(object, params = {})
     if object.respond_to?(:images)
-      @object.images.build(params)
+      object.images.build(params)
     else
-      @object.build_image(params)
+      object.send("build_#{model_type.underscore}".to_sym, params)
     end
   end
 
@@ -42,11 +42,17 @@ class Admin::ImagesController < Admin::BaseController
     model.name.underscore
   end
 
+  def model_type
+    params[:photo_type] || image_params[:photo_type] || "image"
+  end
+
   def id_parameter
     "#{model_name}_id".to_sym
   end
 
   def image_params
-    params.require(:image).permit(:resource, :product_id, :category_id)
+    params.
+      require(:image).
+      permit(:resource, :product_id, :category_id, :photo_type)
   end
 end

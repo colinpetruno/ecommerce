@@ -6,11 +6,21 @@
 
 <%= render partial: "admin/images/images",
   locals: {
+    images: [@category.header_image].reject(&:blank?),
     object: @category,
-    images: [@category.image].reject(&:blank?)
+    title: "Header Image",
+    photo_type: :header_image
+  } %>
+<%= render partial: "admin/images/images",
+  locals: {
+    images: [@category.category_image].reject(&:blank?),
+    object: @category,
+    title: "Category Image",
+    photo_type: :category_image
   } %>
 
-<%= button_to "Delete",
+<br><br>
+<%= button_to "Delete Category",
   admin_category_path(@category),
   method: :delete
 %>

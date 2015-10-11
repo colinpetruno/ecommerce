@@ -3,11 +3,14 @@
     @include outer-container;
 
     & > div {
-      @include span-columns(9);
-      &:last-child {
-        @include span-columns(3);
+      @include media ($horizontal-bar-mode) {
+        @include span-columns(9);
 
-        text-align: right;
+        &:last-child {
+          @include span-columns(3);
+
+          text-align: right;
+        }
       }
     }
   }
