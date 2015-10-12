@@ -1,9 +1,9 @@
-<div class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <br>
-        <h1><%= title %></h1>
-        <br>
-      </div>
+<div class="hero" <%= "style='background-image: url(#{image})'".html_safe if image.present? %>>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <br>
+      <h1><%= title %></h1>
+      <br>
     </div>
   </div>
+</div>

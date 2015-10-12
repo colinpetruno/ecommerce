@@ -1,4 +1,6 @@
 class Category < ActiveRecord::Base
+  include Decoratable
+
   has_many :products
   has_one :header_image, -> { where photo_type: "HeaderImage" },
     as: :imageable,

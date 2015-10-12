@@ -19,7 +19,7 @@ class Admin::ImagesController < Admin::BaseController
     @image = Image.find(params[:id])
     @image.destroy
 
-    redirect_to edit_polymorphic_path([:admin, @image.send(model_name.to_sym)])
+    redirect_to edit_polymorphic_path([:admin, @image.imageable])
   end
 
   private

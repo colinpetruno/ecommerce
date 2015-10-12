@@ -5,7 +5,7 @@
       <div>
         <% @product.images.each do |image| %>
           <div>
-            <%= cl_image_tag(image.resource.url, width: "100%") %>
+            <%= cl_image_tag(image.resource.url(:gallery)) %>
           </div>
         <% end %>
       </div>
@@ -13,7 +13,7 @@
   </div>
   <div>
     <h1><%= @product.name %></h1>
-    Description: <%= @product.description %>
+    <%= @product.description %>
     <%= render partial: "order_item_form", locals: { product: @product } %>
     <br><br>
   </div>

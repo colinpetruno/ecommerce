@@ -4,6 +4,6 @@ class Store::CategoriesController < Store::BaseController
   end
 
   def show
-    @category = Category.includes(:products).find(params[:id])
+    @category = Category.includes(:products).find(params[:id]).decorate
   end
 end

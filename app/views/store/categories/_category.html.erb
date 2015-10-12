@@ -1,4 +1,5 @@
-<%= render partial: "store/shared/hero", locals: { title: category.name } %>
+<%= render partial: "store/shared/hero",
+  locals: { title: category.name, image: category.header_image } %>
 
 <div class="products">
   <% category.products.each do |product| %>

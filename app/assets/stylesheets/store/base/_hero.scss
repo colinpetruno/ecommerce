@@ -16,10 +16,6 @@
   background-size: cover;
   margin-bottom: 3em;
 
-  @include media ($horizontal-bar-mode) {
-    margin-top: 3em;
-  }
-
   .hero-logo img {
     height: 4em;
     margin-bottom: 1em;

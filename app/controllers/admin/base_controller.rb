@@ -6,6 +6,6 @@ class Admin::BaseController < ApplicationController
   private
 
   def authorize_admin
-    redirect_to root_path unless current_user.site_admin?
+    redirect_to root_path unless current_user && current_user.site_admin?
   end
 end
