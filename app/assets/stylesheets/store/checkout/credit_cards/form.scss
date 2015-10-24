@@ -2,8 +2,14 @@
   @include outer-container;
 
   & > div {
-    @include span-columns(6);
-    @include shift(3);
+    padding: 0 1em;
+  }
+
+  @include media ($horizontal-bar-mode) {
+    & > div {
+      @include span-columns(6);
+      @include shift(3);
+    }
   }
 
   .expiration {

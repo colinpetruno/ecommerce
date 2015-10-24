@@ -18,7 +18,7 @@
 
     <%= simple_form_for [:checkout, credit_card] do |f| %>
       <%= f.input :token, as: :hidden %>
-      <%= f.submit t(".submit") %>
+      <%= f.submit t(".submit"), class: "btn-block" %>
     <% end %>
 
     <%= render partial: "dev_helper" if Rails.env.development? %>

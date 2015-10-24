@@ -22,5 +22,5 @@
 -- phone number
 
 <%= simple_form_for [:checkout, @order_confirmation] do |f| %>
-  <%= f.submit t(".submit") %>
+  <%= f.submit t(".submit"), class: "btn-block" %>
 <% end %>
