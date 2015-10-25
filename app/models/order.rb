@@ -6,6 +6,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   belongs_to :funding_instrument
 
+  has_many :coupons, through: :discounts
   has_many :order_items, dependent: :destroy
   has_many :skus, through: :order_items
   has_one :shipping_address

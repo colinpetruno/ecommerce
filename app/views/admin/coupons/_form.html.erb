@@ -1,0 +1,15 @@
+<section>
+  <div class="panel">
+    <div></div>
+    <div>
+      <%= simple_form_for [:admin, @coupon] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :code %>
+        <%= f.input :inventory %>
+        <%= f.input :begins %>
+        <%= f.input :expires %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</section>

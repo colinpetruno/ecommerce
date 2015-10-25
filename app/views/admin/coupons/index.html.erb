@@ -1,0 +1,6 @@
+<h3><%= fa_icon "tags" %> Coupons</h3>
+
+<%= render "coupons", locals: { coupons: @coupons } %>
+
+<br>
+<%= link_to "New Coupon", new_admin_coupon_path, class: "button" %>

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       resources :images, only: [:new, :create, :destroy]
     end
 
+    resources :coupons,
+      only: [ :create, :destroy, :edit, :index, :new, :update ]
+
     resources :orders, only: [:index, :show]
     resources :page_views, only: [:index, :show]
     resources :products do
