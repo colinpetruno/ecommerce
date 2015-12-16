@@ -9,6 +9,7 @@ source 'http://rubygems.org' do
   gem 'carrierwave'
   gem 'cloudinary'
   gem 'devise'
+  gem 'doorkeeper'
   gem 'font-awesome-rails'
   gem 'geocoder'
   gem 'jbuilder', '~> 2.0'

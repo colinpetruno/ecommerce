@@ -1,6 +1,7 @@
 require "resque_web"
 
 Rails.application.routes.draw do
+  use_doorkeeper
   devise_for :users
 
   mount ResqueWeb::Engine => "/resque_web"
