@@ -1,1 +1,5 @@
 $(".email-opt-in-content").html("Thank You! <%= @subscriber.email %> has been subscribed!");
+mixpanel.alias("<%= @subscriber.user.id %>");
+mixpanel.identify("<%= @subscriber.user.id %>");
+mixpanel.people.set({ "$email": "<%= @subscriber.email %>" });
+mixpanel.track("Email Signup");

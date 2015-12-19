@@ -3,7 +3,9 @@
 //= require jquery_ujs
 //= require jquery.slick
 //= require js-cookie
-//= require_tree .
+//= require_tree ./checkout
+//= require_tree ./shared
+//= require_tree ./store
 
 $(function(){
   // TODO: Move to config

@@ -2,3 +2,11 @@ $(".js-cart").replaceWith("<%= j(render partial: "shared/cart") %>");
 
 $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
 
+mixpanel.track("Add Cart Item", {
+  product_id: <%= @product.id %>,
+  product_name: "<%= @product.name %>",
+  sku_id: <%= @order_item.sku_id %>,
+  sku_name: "<%= @order_item.sku.name %>",
+  order_id: <%= @order_item.order_id %>
+});
+

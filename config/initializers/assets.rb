@@ -13,4 +13,5 @@ Rails.application.config.assets.precompile += %w(
   admin.css
   store.css
   application.js
+  analytics.js
 )
